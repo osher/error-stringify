@@ -34,7 +34,7 @@ Pass what you need to control the behavior :)
 ### applying default behavior to all errors
 
 ```
-require('...')()
+require('error-stringify')()
 ```
 
 Default behavior does not split stack traces, and includes only properties on the passed 
@@ -44,7 +44,7 @@ instance (enumerable or not).
 
 ```
 var AppError = require('./app-error-base');
-require('...')({
+require('error-stringify')({
     target            : AppError
     splitStackTrace   : true, 
     includeProtoChain : true
@@ -59,7 +59,7 @@ var options  = {
     splitStackTrace   : true, 
     includeProtoChain : true
 };
-require('...')(options, AppError)
+require('error-stringify')(options, AppError)
 
 ```
 The later form is useful when you want to pick the options from a file instead of 
