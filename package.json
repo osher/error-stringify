@@ -1,0 +1,25 @@
+{
+  "name": "stringify-error",
+  "version": "0.9.0",
+  "description": "Augment errors with `Error#toJSON` that preserves `name`, `message`, `stack` as well as any other normally stringified attribute.",
+  "main": "lib",
+  "scripts": {
+    "test": "mocha",
+    "prepush": "mocha",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha test --recursive",
+    "cover-enforce": "node node_modules/istanbul/lib/cli.js check-coverage --lines 90 --function 90 --branches 85"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "istanbul": "*",
+    "mocha-ui-exports": "~0.2.2",
+    "mocha": "~2.3.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/osher/stringify-error.git"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.com"
+  }
+}
