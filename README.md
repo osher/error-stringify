@@ -29,9 +29,15 @@ normally stringified attribute.
 ## Usage:
 
 The usage vary between the following two extremes.
+
 Pass what you need to control the behavior :)
 
-### applying default behavior to all errors
+### applying default behavior on the global Error
+ 
+ - default target: global Error 
+ - default behavior: 
+    - stacks are not split
+    - prototype chain is not included
 
 ```
 require('error-stringify')()
@@ -40,7 +46,12 @@ require('error-stringify')()
 Default behavior does not split stack traces, and includes only properties on the passed 
 instance (enumerable or not).
 
-### applying configured behavior to custom errors
+### applying behavior by configuration only to custom errors
+
+ - provide target through the `options.target` parameter, or by the `target`
+ - explicit switches
+    - `splitStackTrace` - boolean
+    - `includeProtoChain` - boolean
 
 ```
 var AppError = require('./app-error-base');
@@ -52,7 +63,7 @@ require('error-stringify')({
 
 ```
 
-which is the equivalent of: 
+which is effectively the equivalent of: 
 ```
 var AppError = require('./app-error-base');
 var options  = {
@@ -62,21 +73,20 @@ var options  = {
 require('error-stringify')(options, AppError)
 
 ```
-The later form is useful when you want to pick the options from a file instead of 
-hardcoding it as a literal.
+The later form is useful when you want to pick the options from a file and pass it as is, 
+so you can pass the base Error constructor in the 2nd argument.
 
 
 ## Installation
 
 ```
-npm install --save {}
+npm install error-stringify --save
 ```
 
 ## Alternatives I looked into:
  - (stringify-error)[https://www.npmjs.com/package/stringify-error]
  - (error-tojson)[https://www.npmjs.com/package/error-tojson]
  - (utils-error-to-json)[https://github.com/kgryte/utils-error-to-json]
-
  
 ## Lisence
 MIT, and that's it
