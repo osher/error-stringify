@@ -1,4 +1,6 @@
 # error-stringify
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fosher%2Ferror-stringify.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fosher%2Ferror-stringify?ref=badge_shield)
+
 
 Augment errors with `Error#toJSON` that preserves `name`, `message`, `stack` as well as any other 
 normally stringified attribute.
@@ -92,3 +94,6 @@ npm install error-stringify --save
 MIT, and that's it
 
 Happy coding :) 
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fosher%2Ferror-stringify.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fosher%2Ferror-stringify?ref=badge_large)
