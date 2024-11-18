@@ -1,6 +1,6 @@
 {
   "name": "error-stringify",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Augment errors with `Error#toJSON` that preserves `name`, `message`, `stack` as well as any other normally stringified attribute.",
   "main": "lib",
   "scripts": {
@@ -20,6 +20,6 @@
     "url": "https://github.com/osher/error-stringify.git"
   },
   "publishConfig": {
-    "registry": "http://registry.npmjs.com"
+    "registry": "https://registry.npmjs.org"
   }
 }

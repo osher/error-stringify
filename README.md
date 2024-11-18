@@ -39,7 +39,7 @@ Pass what you need to control the behavior :)
     - stacks are not split
     - prototype chain is not included
 
-```
+```js
 require('error-stringify')()
 ```
 
@@ -53,7 +53,7 @@ instance (enumerable or not).
     - `splitStackTrace` - boolean
     - `includeProtoChain` - boolean
 
-```
+```js
 var AppError = require('./app-error-base');
 require('error-stringify')({
     target            : AppError
@@ -64,7 +64,7 @@ require('error-stringify')({
 ```
 
 which is effectively the equivalent of: 
-```
+```js
 var AppError = require('./app-error-base');
 var options  = {
     splitStackTrace   : true, 
@@ -76,6 +76,16 @@ require('error-stringify')(options, AppError)
 The later form is useful when you want to pick the options from a file and pass it as is, 
 so you can pass the base Error constructor in the 2nd argument.
 
+
+### allow override toJSON (side by side with Axios)
+(see https://github.com/axios/axios/issues/6690)
+
+```js
+require('error-stringify')({
+    allowOverrideToJSON : true
+})
+
+```
 
 ## Installation
 
